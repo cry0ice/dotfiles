@@ -31,14 +31,22 @@
     # nix
     nix-output-monitor
     nurl
+    nil
+    alejandra
+    nixpkgs-fmt
 
     # golang
     go
     go-tools
     golangci-lint
+    gopls
 
     # python
-    python3
+    (python3.withPackages (python-pkgs: [
+      python-pkgs.ipython
+      python-pkgs.python-lsp-server
+    ]))
+    ruff
 
     # rust
     (fenix.complete.withComponents [
@@ -48,5 +56,6 @@
       "rustc"
       "rustfmt"
     ])
+    rust-analyzer
   ];
 }
