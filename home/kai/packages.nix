@@ -15,6 +15,7 @@
     lm_sensors
     pciutils
     usbutils
+    tealdeer
 
     # networking
     dogdns
