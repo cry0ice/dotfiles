@@ -41,4 +41,15 @@
       ];
     };
   };
+
+  services.tor = {
+    enable = true;
+    client.enable = true;
+    settings = {
+      UseBridges = true;
+      AvoidDiskWrites = true;
+      ClientTransportPlugin = "webtunnel exec ${pkgs.obfs4}/bin/lyrebird";
+      Bridge = "webtunnel [2001:db8:b2fd:659b:cb7b:8fa8:87db:4868]:443 F0F04471FD0B057C90D96A0A5011B6304248FAD8 url=https://rapidnetcdn.website/CqaVK9gHQHRXKg5VWmu3";
+    };
+  };
 }
